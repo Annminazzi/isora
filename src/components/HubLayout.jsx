@@ -5,7 +5,7 @@ import Sidebar from './Sidebar';
 const EXTERNAL_LINKS = {
   chatbot: "#",
   newsletter: "#",
-  assistant: "#",
+  assistant: "https://assistant-horloger.vercel.app/",
   bibliotheque: "#",
 };
 
@@ -19,7 +19,7 @@ export default function HubLayout({ user, role = 'visitor', onOpenAuth, onOpenAd
       alert(role === 'visitor' ? "Veuillez créer un compte ou vous connecter pour accéder aux applications." : "Votre compte est en attente de validation par un administrateur.");
       return;
     }
-    
+
     if (isPremiumFeature && role === 'standard') {
       e.preventDefault();
       alert("Cette fonctionnalité requiert un compte Premium.");
