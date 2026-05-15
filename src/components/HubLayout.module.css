@@ -328,10 +328,23 @@
     flex-direction: column !important;
     gap: 3rem;
     margin-bottom: 4rem;
+    /* Allow child elements to use order */
+    display: flex;
   }
   .textContentLeft, .textContentRight {
     text-align: center !important;
     width: 100%;
+    order: 1; /* Le texte vient TOUJOURS en premier sur mobile */
+  }
+  .imageBlock {
+    order: 2; /* L'image vient TOUJOURS après le texte sur mobile */
+    max-width: 280px;
+    margin: 0 auto;
+  }
+  .goldFrame {
+    /* Ajuster la position du cadre doré pour qu'il ne déborde pas de l'écran mobile */
+    max-width: 100%;
+    max-height: 100%;
   }
   .arrowLeft, .arrowRight {
     display: none;
@@ -396,9 +409,26 @@
   border: 1px solid var(--color-gold);
   padding: 3rem;
   max-width: 600px;
+  max-height: 90vh; /* Empêcher la modale de dépasser de l'écran */
+  overflow-y: auto; /* Ajouter un scroll interne si le contenu est trop long */
   position: relative;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .conceptModal {
+    padding: 2rem 1.5rem; /* Réduire le padding sur mobile */
+  }
+  .conceptTitle {
+    font-size: 1.5rem;
+  }
+  .conceptText {
+    font-size: 1rem;
+  }
+  .conceptHighlight {
+    font-size: 1.1rem;
+  }
 }
 
 .closeConceptBtn {
