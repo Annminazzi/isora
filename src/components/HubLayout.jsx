@@ -6,7 +6,7 @@ const EXTERNAL_LINKS = {
   chatbot: "#",
   newsletter: "#",
   assistant: "https://assistant-horloger.vercel.app/",
-  bibliotheque: "#",
+  bibliotheque: "https://bibliotheque-virtuelle.vercel.app/",
 };
 
 export default function HubLayout({ user, role = 'visitor', onOpenAuth, onOpenAdmin }) {
